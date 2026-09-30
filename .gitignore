@@ -1,0 +1,18 @@
+# Local operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local editor files
+.vscode/
+.idea/
+
+# Local environment and secret files
+.env
+.env.*
+!.env.example
+
+# Dependency and log directories (the current site has no npm dependencies)
+node_modules/
+*.log
+
