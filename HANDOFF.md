@@ -9,6 +9,7 @@
 - 不需要 `.env`、API Key、数据库、Git LFS 或 Git 子模块。
 - 页面正文、CSS 和 JavaScript 都在 `dist/index.html` 中。
 - 景点图片均已存入仓库，不依赖当前电脑上的绝对路径。
+- 旅游生成 skill 已作为项目级 skill 存入 `.codex/skills/travel-plan-page/`，会随 GitHub 一起同步。
 - 弹窗中的地图瓦片在浏览时从 OpenStreetMap 联网加载；12306、高德地图和图片来源按钮也是外部链接。没有网络时，网站主体和本地图片仍可打开，但地图与外链不可用。
 
 ## 家里电脑从零恢复
@@ -31,6 +32,24 @@ python -m http.server 4173 -d dist
 ```
 
 浏览器打开：<http://localhost:4173>
+
+## 旅游 skill
+
+原始 skill 位于旧电脑的全局目录：
+
+```text
+C:\Users\Administrator\.codex\skills\travel-plan-page
+```
+
+这个全局目录本身不会随项目同步。仓库已经保存了一份经过密钥与绝对路径检查的完整副本：
+
+```text
+.codex/skills/travel-plan-page/
+```
+
+从 GitHub 克隆后，在 Codex 中以本仓库根目录作为工作目录打开项目即可使用项目级 `generate-lightweight-travel-page` skill，不需要再次从旧电脑复制。项目副本包含 `SKILL.md`、脚本、地图模板、GeoJSON、Schema、参考资料和许可证。
+
+如确实想让该 skill 对家里电脑上的所有项目都可用，可在家里手动把仓库中的 `.codex/skills/travel-plan-page` 复制到用户目录 `~/.codex/skills/travel-plan-page`。这不是运行当前项目的必要步骤，也不要复制旧电脑的整个 `.codex` 目录，因为其中可能包含与账号或本机有关的其他配置。
 
 ### 启动方式 B：Node.js
 
