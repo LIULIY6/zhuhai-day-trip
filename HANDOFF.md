@@ -4,6 +4,8 @@
 
 这是一个纯静态网站。网页入口是 `dist/index.html`，图片也全部位于 `dist/`。
 
+公开网站：<https://liuliy6.github.io/zhuhai-day-trip/>
+
 - 不需要 Node.js 依赖，也没有 `package.json` 或锁文件。
 - 不需要构建步骤。
 - 不需要 `.env`、API Key、数据库、Git LFS 或 Git 子模块。
@@ -84,5 +86,7 @@ git add -A
 git commit -m "描述本次修改"
 git push
 ```
+
+仓库中的 `.github/workflows/pages.yml` 会在 `main` 分支收到新提交时自动把 `dist/` 发布到 GitHub Pages。推送后通常需要稍等片刻，公开网站才会更新。
 
 不要提交真实的密码、Token、API Key 或 `.env`。当前版本没有任何必须重新填写的环境变量。
